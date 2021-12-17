@@ -2,7 +2,7 @@ import debounce from 'lodash.debounce';
 // Описан в документации
 import SimpleLightbox from "simplelightbox";
 // Дополнительный импорт стилей
-import "simplelightbox/dist/simple-lightbox.min.css";
+// import "simplelightbox/dist/simple-lightbox.min.css";
 import animalCard from '../templates/card.hbs';
 import Notiflix from 'notiflix';
 import NewsApiService from '../js/new-service';
