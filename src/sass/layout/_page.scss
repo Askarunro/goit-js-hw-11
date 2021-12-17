@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+}
+
+.is-hidden {
+    display: none;
+}
+
+.search-form {
+    position: fixed;
+    width: 100%;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    background-color: #4056b4;
+    box-shadow: 0px 10px 8px 2px rgba(0, 0, 0, 0.3);
+    &__wrapper {
+        position: relative;
+        border-radius: 20px;
+        border: 2px solid #618ed1;
+        overflow: hidden;
+        &:focus-visible {
+            border: none;
+            outline: none;
+        }
+    }
+    &__input {
+        padding-left: 15px;
+        height: 30px;
+        width: 300px;
+        border: none;
+        &:focus-visible {
+            border: none;
+            outline: none;
+        }
+    }
+    &__button {
+        position: absolute;
+        right: 0px;
+        border: none;
+        padding: 8px;
+    }
+    // &__icon {}
+}
+
+.gallery {
+    padding-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+a {
+    display: block;
+    margin: 0;
+    padding: 0;
+    margin: 20px;
+    max-width: 100%;
+    border: 2px solid rgb(105, 106, 109);
+    border-radius: 5px;
+    overflow: hidden;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: black;
+    @media screen and (min-width: 768px) {
+        max-width: calc((100% - 160px)/2);
+    }
+    @media screen and (min-width: 1024px) {
+        max-width: calc((100% - 160px)/3);
+    }
+    @media screen and (min-width: 1440px) {
+        max-width: calc((100% - 160px)/4);
+    }
+}
+
+.photo-card {
+    width: 100%;
+}
+
+.img-box {
+    // height: 180px;
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+    & img {
+        object-fit: contain;
+        display: block;
+        width: 100%;
+    }
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    background-color: rgb(214, 214, 214);
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-more {
+    padding: 10px 50px;
+    background-color: rgb(9, 169, 190);
+    color: white;
+    border: none;
+    font-size: 20px;
+    line-height: 1.2;
+}
