@@ -1,0 +1,88 @@
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: $textColor;
+    background-color: $primaryColorWhite;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+
+
+    // max-width: 480px;
+  }
+
+  body.modal-open{
+    overflow: hidden;
+  }
+  
+  img {
+    display: block;
+    // width: 100%;
+
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* відміняємо маркер списку */
+  .list {
+    list-style: none;
+  }
+  
+  /* відміняємо підкреслення посилань */
+  .link-style {
+    text-decoration: none;
+  }
+  
+  /* стилі для контейнерів */
+  
+  .container {
+    // max-width: 1200px;
+
+
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+
+    @media screen and (min-width: 480px){
+      max-width:480px;
+    }
+
+    @media screen and (min-width: 768px){
+      max-width:768px;
+    }
+
+    @media screen and (min-width: 1200px){
+      max-width:1200px;
+    }
+
+  }
+  
+  /* Скидаю глобально зовнішні відступи  */
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0px;
+  }
+  
+  p {
+    margin: 0px;
+  }
+  
+  ul {
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  .section-advantages__title--hidden,
+  .section-portfolio__title--hidden
+  {
+    position: absolute;
+  
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+  }

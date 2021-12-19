@@ -9,36 +9,36 @@ export default class NewsApiServece {
     }
 
 
-    async fetchArticles() {
-        try {
-            const response = await axios({
-                method: 'GET',
-                url: `https://pixabay.com/api/?key=${API_KEY}&q=${this.searchName}&page=${this.page}&image_type=photo&orientation=horizontal&safesearch=true&per_page=40`,
-            })
-            const todoItems = await response.data;
-            const n = await this.incrementPage();
-            return await todoItems.hits
-        } catch (errors) {
-            console.error(errors);
-        }
-    };
+    // async fetchArticles() {
+    //     try {
+    //         const response = await axios({
+    //             method: 'GET',
+    //             url: `https://pixabay.com/api/?key=${API_KEY}&q=${this.searchName}&page=${this.page}&image_type=photo&orientation=horizontal&safesearch=true&per_page=40`,
+    //         })
+    //         const todoItems = await response.data;
+    //         const n = await this.incrementPage();
+    //         return await todoItems.hits
+    //     } catch (errors) {
+    //         console.error(errors);
+    //     }
+    // };
 
     // FETCH
 
-    // fetchArticles() {
-    //     return fetch(`https://pixabay.com/api/?key=${API_KEY}&q=${this.searchName}&page=${this.page}&image_type=photo&orientation=horizontal&safesearch=true&per_page`).then(response => {
-    //         if (!response.ok) {
-    //             throw new Error(response.status);
-    //         }
-    //         return response.json();
-    //     }).then(({ hits }) => {
-    //         this.incrementPage();
-    //         if (hits.length < 1) {
-    //             throw new Error(response.status);
-    //         }
-    //         return hits
-    //     });
-    // }
+    fetchArticles() {
+        return fetch(`https://pixabay.com/api/?key=${API_KEY}&q=${this.searchName}&page=${this.page}&image_type=photo&orientation=horizontal&safesearch=true&per_page`).then(response => {
+            if (!response.ok) {
+                throw new Error(response.status);
+            }
+            return response.json();
+        }).then(({ hits }) => {
+            this.incrementPage();
+            if (hits.length < 1) {
+                throw new Error(response.status);
+            }
+            return hits
+        });
+    }
     incrementPage() {
         this.page += 1;
     }
