@@ -12,6 +12,7 @@ const newsApiService = new NewsApiService();
 const refs = {
     form: document.querySelector('#search-form'),
     gallery: document.querySelector('.gallery'),
+    btnEn: document.querySelector('.box-btn'),
     btnMore: document.querySelector('.btn-more')
 }
 refs.form.addEventListener('submit', onFormSubmit)
@@ -33,9 +34,9 @@ function onFormSubmit(evt) {
     })
     newsApiService.query = a;
     newsApiService.resetPage();
-    clearArticlesContainer()
-    newsApiService.fetchArticles().then(markupHits).catch(onFetchError)
-
+    clearArticlesContainer();
+    newsApiService.fetchArticles().then(markupHits).then(btnEn()).catch(onFetchError);
+    
 }
 
 function markupHits(hits) {
@@ -69,6 +70,11 @@ function clearArticlesContainer() {
     refs.gallery.innerHTML = '';
 }
 
+function btnEn(){
+    if(refs.btnEn.classList.contains('is-hidden')){
+        refs.btnEn.classList.remove('is-hidden');
+    }
+}
 
 
 // const url = 'https://pixabay.com/api';
