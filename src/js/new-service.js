@@ -32,10 +32,11 @@ export default class NewsApiServece {
             }
             return response.json();
         }).then(({ hits }) => {
-            this.incrementPage();
             if (hits.length < 1) {
                 throw new Error(response.status);
             }
+            this.incrementPage();
+            
             return hits
         });
     }
