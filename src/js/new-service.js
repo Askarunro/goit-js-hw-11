@@ -26,7 +26,7 @@ export default class NewsApiServece {
     // FETCH
 
     fetchArticles() {
-        return fetch(`https://pixabay.com/api/?key=${API_KEY}&q=${this.searchName}&page=${this.page}&image_type=photo&orientation=horizontal&safesearch=true&per_page`).then(response => {
+        return fetch(`https://pixabay.com/api/?key=${API_KEY}&q=${this.searchName}&page=${this.page}&image_type=photo&orientation=horizontal&safesearch=true&per_page=40`).then(response => {
             if (!response.ok) {
                 throw new Error(response.status);
             }

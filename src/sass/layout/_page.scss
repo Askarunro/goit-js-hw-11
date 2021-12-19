@@ -10,6 +10,7 @@ div.is-hidden {
 .search-form {
     position: fixed;
     width: 100%;
+    z-index: 100;
     padding: 15px 0;
     display: flex;
     justify-content: center;
@@ -18,7 +19,7 @@ div.is-hidden {
     &__wrapper {
         position: relative;
         border-radius: 20px;
-        border: 2px solid #618ed1;
+        border: 1px solid #618ed1;
         overflow: hidden;
         &:focus-visible {
             border: none;
@@ -48,6 +49,10 @@ div.is-hidden {
     padding-top: 80px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    @media screen and (min-width: 768px) {
+        justify-content: space-between;
+    }
 }
 
 a {
@@ -55,21 +60,21 @@ a {
     margin: 0;
     padding: 0;
     margin: 20px;
-    max-width: 100%;
-    border: 2px solid rgb(105, 106, 109);
+    // max-width: 50%;
+    border: 1px solid rgb(105, 106, 109);
     border-radius: 5px;
     overflow: hidden;
     box-sizing: border-box;
     text-decoration: none;
     color: black;
     @media screen and (min-width: 768px) {
-        max-width: calc((100% - 160px)/2);
+        width: calc((100% - 160px)/2);
     }
     @media screen and (min-width: 1024px) {
-        max-width: calc((100% - 160px)/3);
+        width: calc((100% - 160px)/3);
     }
     @media screen and (min-width: 1440px) {
-        max-width: calc((100% - 160px)/4);
+        width: calc((100% - 160px)/4);
     }
 }
 
@@ -114,4 +119,14 @@ a {
     border: none;
     font-size: 20px;
     line-height: 1.2;
+}
+.animated-style{
+    animation-name: newCard;
+    animation-duration: 2000ms;
+    animation-timing-function: ease;
+}
+
+@keyframes newCard{
+    0%{opacity: 0};
+    100%{opacity: 1;}
 }
