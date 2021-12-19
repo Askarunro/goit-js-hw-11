@@ -46,11 +46,11 @@ function markupHits(hits) {
 }
 
 function onFetchError(error) {
+    btnHidden();
   Notiflix.Notify.failure(
     'Sorry, there are no images matching your search query. Please try again.',
   );
-  
-    btnHidden();
+    
 }
 
 function onFetchOops(oops) {
